@@ -84,9 +84,11 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     var description;
 
     if(offer_form.each > 0) {
-      description = "$" + offer_form.cost + "/" + offer_form.each;
+      var each_rate = offer_form.cost / (offer_form.each * get_weight_of(offer_form.name));
+      description = "$" + offer_form.cost + "/" + offer_form.each + " (" + accounting.formatMoney(each_rate) + "/lb)";
     } else {
-      description = "$" + offer_form.cost + "/" + offer_form.weight + "lb";
+      var rate = offer_form.cost / offer_form.weight;
+      description = "$" + offer_form.cost + "/" + offer_form.weight + "lb" + " (" + accounting.formatMoney(rate) + "/lb)";
     }
 
     var this_offer = {
@@ -177,16 +179,75 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     $scope.all_products = all_products();
   }
 
-  function best_offer_for(product_name) {
-    return _.chain(offers_for(product_name)).reduce(function(best_offer, this_offer) {
-      var best_offer_rate = best_offer.cost / best_offer.weight || 99999;
-      var this_offer_rate = this_offer.cost / this_offer.weight || 99999;
+  function get_per_pound_offers(product_name) {
+    return _.chain(offers_for(product_name)).select(function(offer) {
+      return offer.weight;
+    }).value();
+  }
+
+  function get_per_each_offers(product_name) {
+    return _.chain(offers_for(product_name)).select(function(offer) {
+      return offer.each;
+    }).value();
+  }
+
+  function get_best_per_pound_offer(product_name) {
+    return _.chain(get_per_pound_offers(product_name)).reduce(function(best_offer, this_offer) {
+      var best_offer_rate = best_offer.cost / best_offer.weight;
+      var this_offer_rate = this_offer.cost / this_offer.weight;
 
       if(this_offer_rate < best_offer_rate)
         return this_offer;
       else
         return best_offer;
     }).value();
+  }
+
+  function get_best_per_each_offer(product_name) {
+    return _.chain(get_per_each_offers(product_name)).reduce(function(best_offer, this_offer) {
+      var best_offer_rate = best_offer.cost / best_offer.each;
+      var this_offer_rate = this_offer.cost / this_offer.each;
+
+      if(this_offer_rate < best_offer_rate)
+        return this_offer;
+      else
+        return best_offer;
+    }).value();
+  }
+
+  function get_weight_of(product_name) {
+    var offer = _.chain(offers_for(product_name)).select(function(offer) {
+      return offer.weight && offer.each;
+    }).first().value();
+
+    if(offer)
+      return offer.weight / offer.each;
+    else
+      return .25;
+  }
+
+  function best_offer_for(product_name) {
+    var best_weight_offer = get_best_per_pound_offer(product_name);
+    var best_each_offer = get_best_per_each_offer(product_name);
+    
+    if(!best_weight_offer && !best_each_offer)
+      return "";
+
+    if(best_weight_offer && !best_each_offer)
+      return best_weight_offer;
+
+    if(best_each_offer && !best_weight_offer)
+      return best_each_offer;
+
+
+    var weight_rate = best_weight_offer.cost / best_weight_offer.weight;
+    var each_rate = best_each_offer.cost / (best_each_offer.each * get_weight_of(product_name));
+
+    if(weight_rate < each_rate)
+      return best_weight_offer;
+    else {
+      return best_each_offer;
+    }
   }
 
   sliderCostChange = function(value) {
