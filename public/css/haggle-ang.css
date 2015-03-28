@@ -1,0 +1,13 @@
+.bought td { text-decoration: line-through; }
+
+.metro .ui-slider-horizontal .ui-slider-handle { top: -1px; }
+.metro .ui-slider .ui-slider-handle { width: 2.4em; height: 3em; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.metro .ui-slider-horizontal { height: 3em; }
+.metro .horizontal .ui-slider-labels { top: 2em; }
+
+.metro { -ms-scroll-chaining: none; }
+
+#product-in-focus { width: 90%; margin: 0 auto; }
+#product-in-focus #cost { margin-right: 10px; background: #00AD34; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
+#product-in-focus #weight-each { background: #960038; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
+#product-in-focus #product-name { text-align: center; }

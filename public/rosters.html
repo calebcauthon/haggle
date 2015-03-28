@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://kcusl.com/e/2015-spring-league/teams -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <script async="" src="./css/sl2015/analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcDWFJWGwEJXFZQBgQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>  
+                    <title>2015 Spring League - Kansas City Ultimate</title>
+                      <meta name="description" content="The 2015 Kansas City Ultimate Spring League is here!
+Details
+
+Dates: Every Thursday night from March 19 to April 30 with the end-of-league tournament taking place&amp;hellip;">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+      <meta property="og:title" content="2015 Spring League">
+      <meta property="og:url" content="http://kcusl.com/e/2015-spring-league/teams">
+      <meta property="og:site_name" content="Kansas City Ultimate">
+      <meta property="og:description" content="The 2015 Kansas City Ultimate Spring League is here!
+Details
+
+Dates: Every Thursday night from March 19 to April 30 with the end-of-league tournament taking place…">
+        <meta property="og:image" content="http://cdn.usetopscore.com/uploads/53/media_items/kcultimate-logo.483.82.s.png">
+          <meta property="og:image:secure_url" content="https://cdn.usetopscore.com/uploads/53/media_items/kcultimate-logo.483.82.s.png">
+              <meta property="og:image:type" content="image/png">
+              <meta property="og:image:width" content="483">
+              <meta property="og:image:height" content="82">
+      
+  
+      
+  <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=">
+  
+      <script>
+            var disqus_shortname = "kcultimate";
+          </script>
+  
+    
+                          <link href="./css/sl2015/38f2293fac8d33ebd6dcd616a421abcb.css" data-group="global" rel="stylesheet" type="text/css" media="screen,print">
+    
+  <script id="csrf" data-name="_csrf_token" data-value="19f40043513a7e318bfa25f9dc2471f7"></script>
+  <script id="api-csrf" data-name="api_csrf" data-value="czczA8aQHv_5nZ-EUPQMaokkTWO56eM07MyRGZ2SrJk"></script>
+  <script id="upload_max_file_size" data-bytes="15728640" data-text="15M"></script>
+    
+      <script id="primary-color" data-value="66001a"></script>
+  <script type="text/javascript" charset="UTF-8" src="./css/sl2015/common.js"></script><script type="text/javascript" charset="UTF-8" src="./css/sl2015/util.js"></script><script type="text/javascript" charset="UTF-8" src="./css/sl2015/stats.js"></script><script type="text/javascript" charset="UTF-8" src="./css/sl2015/AuthenticationService.Authenticate"></script></head>
+  <body class="sidebar-left body-monolith body-border show-edit-controls body-full-gradient" id="body" data-pinterest-extension-installed="cr1.35">
+                    <div class="body-bg cover hor-left ver-bottom"><img src="./css/sl2015/kc-skyline-background.1600.371.s.jpg" class="bg-cover cover-x hor-left ver-bottom"></div>
+        <div class="flashes">
+                                                                            <div id="flash-tmpl" class="hide">
+      <div class="flash flash-FLASH_TYPE">
+        <div class="container">
+          <a data-for=".flash" href="javascript:;" class="icon-close no-label plain-link my-toggler close-only"><span class="icon"></span><span class="btn-label">Close</span></a>          FLASH_MESSAGE
+        </div>
+      </div>
+    </div>
+  </div>
+          <div class="global-toolbar">
+        <div class="container">
+      <div id="global-toolbar-collapse" class="nav-expanded">
+        <div class="nav-mobile nav-mobile-button">
+          <span class="icon-menu plain-link no-label"><span class="icon"></span></span>        </div>
+        <div class="nav-user nav-bar-btn align-right">
+                                          <a class="menu-toggle icon-dropdown icon-right btn" href="http://kcusl.com/u/caleb-cauthon"><img alt="Picture of Caleb Cauthon" class="inset-line-left" src="./css/sl2015/52573bd7d3db0308f9a394644b58e62d.20.png" width="20" height="20"><span class="btn-label">Caleb Cauthon</span><span class="icon"></span></a>            <div class="options-menu dropdown">
+              <ul class="options-menu-list">
+                                  <li>
+                    <a class="plain-link icon-events" href="http://kcusl.com/u/caleb-cauthon/events"><span class="icon"></span><span class="btn-label">Events</span></a>                  </li>
+                                                                  <li>
+                    <a class="plain-link icon-teams" href="http://kcusl.com/u/caleb-cauthon/teams"><span class="icon"></span><span class="btn-label">Teams</span></a>                  </li>
+                                <li><a class="icon-edit plain-link" href="http://kcusl.com/u/caleb-cauthon/edit"><span class="icon"></span><span class="btn-label">Account</span></a></li>
+                <li><a class="icon-close plain-link" href="http://kcusl.com/signout"><span class="icon"></span><span class="btn-label">Sign Out</span></a></li>
+              </ul>
+            </div>
+                  </div>
+        <ul class="nav nav-bar">
+
+                      <li class="network-item nav-item">
+                              <a href="http://ultimatecentral.com/" class="plain-link icon-uc" style="">
+                  <span class="icon"></span>
+                  <span class="btn-label nav-mobile">Ultimate Central</span>
+                </a>
+                          </li>
+          
+
+                      <li class="nav-item">
+                            
+                                                          <a href="javascript:;" class="icon-dropdown plain-link nav-arrow no-label nav-collapsed-only" style="display: none;"><span class="icon"></span><span class="btn-label">open</span></a>                                          <a class="plain-link icon-event-list" href="http://kcusl.com/e"><span class="icon"></span><span class="btn-label">Events <span class="badge">1</span></span></a>                              <ul class="nav-bar-dropdown">
+                                                                                                  <li class="nav-item nav-item-img">
+                                                                  <a class="plain-link" href="http://kcusl.com/e/2015-spring-league"><img alt="KCUltimate Logo" src="./css/sl2015/kcultimate-logo.30.6.s.png" data-media-item-id="101704" style=" max-height: 30px; ">2015 Spring League <span class="badge badge-success">accepted</span></a>                    </li>
+                                                    </ul>
+                          </li>
+          
+
+          
+
+          <li class="nav-item">
+                        <a class="plain-link icon-blog" href="http://kcusl.com/p"><span class="icon"></span><span class="btn-label">Posts</span></a>            <ul class="nav-bar-dropdown">
+                                        </ul>
+          </li>
+
+
+                      <li class="nav-item">
+              <a href="javascript:;" class="icon-dropdown plain-link nav-arrow no-label nav-collapsed-only" style="display: none;"><span class="icon"></span><span class="btn-label">open</span></a>                            <a class="plain-link icon-teams" href="http://kcusl.com/t"><span class="icon"></span><span class="btn-label">Teams <span class="badge">1</span></span></a>              <ul class="nav-bar-dropdown">
+                                                    <li class="nav-item nav-item-img">
+                    <a class="plain-link" href="http://kcusl.com/t/team-6-265"><img alt="Uc Logomark" src="./css/sl2015/uc-logomark-1.30.30.s.png" data-media-item-id="127650" style=" max-height: 30px; ">Team 6</a>                  </li>
+
+                                <li class="nav-item">
+                  <a class="icon-add plain-link" href="http://kcusl.com/t/new"><span class="icon"></span><span class="btn-label">Add Team</span></a>                                  </li>
+              </ul>
+            </li>
+                      
+
+                      
+          
+                                        
+
+                                <li class="nav-item align-right">
+              <a target="_blank" href="http://help.ultimatecentral.com/" class="icon-help plain-link"><span class="icon"></span><span class="btn-label">Help</span></a>            </li>
+                    
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div id="page-overlay"></div>
+<div id="popup-wrapper">
+  <div id="popup-width-enforcer">
+    <div id="popup" class="popup-window">
+      <a href="javascript:;" class="icon-close close-popup plain-link alt no-label"><span class="icon"></span></a>      <div id="popup-content"></div>
+    </div>
+  </div>
+</div>
+      <div class="main-content-container">
+    <div class="container">
+        <div class="header " id="header">
+    <div class="span4 ">
+              <a href="http://kcusl.com/" title="Home" class="site-logo">
+                    <img alt="KCUltimate Logo" src="./css/sl2015/kcultimate-logo.370.63.s.png" data-media-item-id="101704" style=" max-height: 250px; ">        </a>
+              
+    </div>
+  </div>
+      <div id="dynamic-content">
+          <div id="main-navigation">
+          <div>
+    <div id="nav-bar-collapse" class="nav-bar-main  nav-expanded">
+    <div class="nav-mobile nav-mobile-button">
+      <span class="icon-menu plain-link">
+        <span class="icon"></span>
+        <span class="btn-label">Navigation</span>
+      </span>
+    </div>
+    <ul class="nav nav-bar">
+                              <li class="nav-item ">
+            <a href="http://kcusl.com/more-ultimate" class="with-children">Play Ultimate<span class="icon-dropdown plain-link no-label"><span class="icon"></span></span></a>                          <ul class="nav-bar-dropdown">
+                
+              
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/pickup">Pickup</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/leagues">Leagues</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/tournaments">Tournaments</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/goaltimate">Goaltimate</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/teams/college-teams">College</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/more-ultimate/club">Club</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://www.kcultimate.com/e/up-too-late/posts">Up Too Late</a>    </li>
+                </ul>
+                      </li>
+                  <li class="nav-item ">
+            <a href="http://kcusl.com/community" class="with-children">Community<span class="icon-dropdown plain-link no-label"><span class="icon"></span></span></a>                          <ul class="nav-bar-dropdown">
+                
+        
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/community/events">Events</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/community/volunteer">Volunteer</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/community/blog">Blog</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/community/email">Email List</a>    </li>
+                </ul>
+                      </li>
+                  <li class="nav-item ">
+            <a href="http://kcusl.com/about" class="with-children">About KCU<span class="icon-dropdown plain-link no-label"><span class="icon"></span></span></a>                          <ul class="nav-bar-dropdown">
+                
+      
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/about/contact-us">Contact Us</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/about/board-of-directors">Board of Directors</a>    </li>
+  
+    <li class="nav-item  ">
+      <a href="http://kcusl.com/about/fields">Fields</a>    </li>
+                </ul>
+                      </li>
+                  <li class="nav-item nav-item-social">
+            <a href="http://www.twitter.com/KCUltimate" class="icon-twitter plain-link no-label nav-icon" data-ga="{&quot;category&quot;:&quot;social&quot;,&quot;action&quot;:&quot;click-twitter&quot;,&quot;label&quot;:&quot;nav-item&quot;}"><span class="icon"></span><span class="btn-label">Twitter</span></a>                      </li>
+                  <li class="nav-item nav-item-social">
+            <a href="https://www.facebook.com/KCUltimate" class="icon-facebook plain-link no-label nav-icon" data-ga="{&quot;category&quot;:&quot;social&quot;,&quot;action&quot;:&quot;click-facebook&quot;,&quot;label&quot;:&quot;nav-item&quot;}"><span class="icon"></span><span class="btn-label">Facebook</span></a>                      </li>
+                  </ul>
+  </div>
+</div>        
+  </div>
+<div id="content">
+  <div class="content-inner">
+                        <div class="row-fluid">
+                                    <div class="sidebar-content span3">
+            <div class="sidebar-content-inner"><div class="sidebar-area">
+  <div class="text-center spacer1">
+            <img alt="Photo for 2015 Spring League" src="./css/sl2015/kcultimate-logo.170.29.c.png" data-media-item-id="101704" style=" max-height: 170px; ">          <div class="small">
+        <a target="_blank" class="plain-link" href="https://cdn.usetopscore.com/uploads/53/media_items/kcultimate-logo.original.png">full image</a>      </div>
+      </div>
+
+
+    <ul class="nav nav-sidebar">
+
+    <li class="nav-item unselected">
+      <a class="plain-link icon-overview" href="http://kcusl.com/e/2015-spring-league"><span class="icon"></span><span class="btn-label">Overview</span></a>    </li>
+
+                  <li class="nav-item unselected">
+          <a class="plain-link icon-your-team" href="http://kcusl.com/t/team-6-265"><span class="icon"></span><span class="btn-label">Team 6</span></a>        </li>
+          
+        
+    
+          <li class="nav-item  ">
+                <a class="plain-link icon-standings" href="http://kcusl.com/e/2015-spring-league/standings"><span class="icon"></span><span class="btn-label">Pools &amp; Standings</span></a>      </li>
+    
+          <li class="nav-item  ">
+        <a class="plain-link icon-schedule" href="http://kcusl.com/e/2015-spring-league/schedule"><span class="icon"></span><span class="btn-label">Schedule<span class="align-right badge">4</span></span></a>      </li>
+    
+          <li class="nav-item selected ">
+        <a class="plain-link icon-teams" href="./css/sl2015/2015 Spring League - Kansas City Ultimate.html"><span class="icon"></span><span class="btn-label">Teams<span class="align-right badge">8</span></span></a>      </li>
+    
+    
+          <li class="nav-item  ">
+        <a class="plain-link icon-location" href="http://kcusl.com/e/2015-spring-league/location"><span class="icon"></span><span class="btn-label">Locations<span class="align-right badge">1</span></span></a>      </li>
+        <li class="nav-item">
+      <a href="mailto:2015-spring-league@kcultimate.ultimatecentral.com" data-prefix="2015-spring-league" data-suffix="kcultimate.ultimatecentral.com" class="plain-link icon-email" data-label="&lt;span class=&quot;icon&quot;&gt;&lt;/span&gt;&lt;span class=&quot;btn-label&quot;&gt;Message Coordinator&lt;/span&gt;"><span class="icon"></span><span class="btn-label">Message Coordinator</span></a>    </li>
+  </ul>
+</div></div>
+          </div>
+                                  <div class="main-content span9">
+          <div class="main-content-inner">      <div id="event-team-list">
+            <div class="spacer1 event-show-header">
+  <div class="badge-line">
+        <span class="badge">league</span>        
+    </div>  
+  <h2 class="subtitled">2015 Spring League</h2>
+  <div class="meta-small">
+    <h3 class="subtitled">
+      3/19/15              to 5/2/15            
+                    at                  <a class="plain-link" href="http://kcusl.com/f/kenneth-polo-fields">Kenneth Polo Fields</a>,
+                                        
+        Kansas City, MO          </h3>   
+  </div>
+      <ul class="control-group small">
+      </ul>
+</div>
+        
+    <h1><span class="icon-teams plain-link no-label"><span class="icon"></span></span> Teams</h1>    
+               
+    <form id="team-search" class="form-vertical form-inset form-filter" action="./css/sl2015/2015 Spring League - Kansas City Ultimate.html" novalidate="novalidate">
+      <div class="row-fluid">
+        <div class="span4">
+          <div class="form-row input-text">
+<label for="search"><span class="icon-search plain-link no-label"><span class="icon"></span></span> Search</label>
+
+<div class="form-control"><input class="span3" placeholder="Search Teams" type="text" name="search" id="search">
+</div></div>
+        </div>
+                  <div class="span2">
+            <div class="form-row select">
+<label for="registration_status">Status</label>
+
+<div class="form-control"><select name="registration_status" id="registration_status">
+<option value="" selected="selected"></option>
+<option value="accepted">Accepted</option>
+<option value="waitlisted">Waitlisted</option>
+<option value="pending">Pending</option>
+</select>
+</div></div>
+          </div>
+                <div class="span4 hide">
+          <div class="form-row input-hidden">
+<label for="division">Division</label>
+
+<div class="form-control"><input type="hidden" name="division" id="division">
+</div></div>
+        </div>
+                
+      </div>
+    </form>
+        <div id="team-list" class="">
+            
+ 
+
+      <div id="team-list-b45e30cc">
+    
+    <div class="filter-list">
+              
+  
+
+
+
+
+
+
+<h2 class="list-header filter-links">
+      You are viewing all teams.  </h2>
+
+           
+
+                                                                                                                                                                                                                                            <h3></h3>
+      <div class="row-fluid"><div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-1-573" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 1</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/emily-royer">Emily Royer</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kaylee-drenker">Kaylee Drenker</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/lindsay-hoyt">Lindsay Hoyt</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (14)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/dannie-hallin">Dannie Hallin</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ashton-zeigler">Ashton Zeigler</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brett-matzuka">Brett Matzuka</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brian-werner">Brian Werner</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/canaan-zeigler">Canaan Zeigler</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/chuck-smith">Chuck Smith</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jacob-rickwa">Jacob Rickwa</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/justin-smith-5">Justin Smith</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/nathanial-drenker">Nathanial Drenker</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/paul-ronjak">Paul Ronjak</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/phil-ward">Phil  Ward</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/scott-abraham">Scott Abraham</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/tj-meehan">TJ Meehan</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/wint-doering">Wint Doering</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div>
+<div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-2-455" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 2</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/cassandra-gillespie">Cassandra Gillespie</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/laura-moluf">Laura Moluf</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/mariacristina-pilla">Mariacristina Pilla</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (14)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/michael-montesano">Michael Montesano</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/aaron-smith-2">Aaron Smith</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/christian-simpson">Christian Simpson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/christopher-ginac">Christopher Ginac</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/corey-glasper">Corey Glasper</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/craig-nelson">Craig Nelson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/george-martin">George Martin</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jeff-oesterle">Jeff Oesterle</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/joshua-bruner">Joshua Bruner</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/matthew-smith">Matthew Smith</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/omar-alsadeq">omar alsadeq</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/scott-espinosa-1">Scott Espinosa</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/tyler-goff">Tyler Goff</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/valley-renshaw">Valley Renshaw</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div>
+<div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-3-425" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/53/media_items/three-amigos.473.280.s.jpg&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 3 (Amigos)</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jordan-warren">Jordan Warren</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/laura-gehrt">Laura Gehrt</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/sarah-bey">Sarah Bey</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (14)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/allen-jones">Allen Jones</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alex-pratt-1">Alex Pratt</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/andrew-wimer">Andrew Wimer</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brent-lockee">Brent Lockee</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brian-becker">Brian Becker</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/chris-burnett">Chris Burnett</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/lev-ginsburg">Lev Ginsburg</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/logan-nesseth">Logan Nesseth</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/max-feldt">Max Feldt</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/michael-fleenor-1">michael fleenor</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/michael-schuette">Michael Schuette</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/nick-biggerstaff-1">Nick Biggerstaff</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/phil-wimer">Phil Wimer</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/timothy-kao">Timothy Kao</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div></div>
+      <div class="row-fluid"><div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-4-419" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 4</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (4)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/grace-fourman">Grace Fourman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kelly-gillean">Kelly Gillean</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/paige-asmann">Paige Asmann</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/rachelle-kuntz">Rachelle Kuntz</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (13)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/cory-green">Cory Green</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alex-rickard-1">Alex Rickard</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alex-ware">Alex Ware</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brandon-bradbury">brandon bradbury</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/chris-allison">chris allison</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/curtis-stoneman">Curtis Stoneman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/joe-young">Joe Young</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kevin-wickman">Kevin Wickman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/nate-karstens">Nate Karstens</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/peter-bures">Peter Bures</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/rane-west">Rane West</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/seth-miller">Seth Miller</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/tim-landstra">Tim Landstra</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div>
+<div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-5-278" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 5</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/erin-nielsen-1">Erin Nielsen</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/lizzie-heine">Lizzie Heine</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/tesa-pickert">tesa pickert</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (14)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/pj-matulka">Pj matulka</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alan-obrien">Alan O'Brien</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/andrew-seaman">Andrew Seaman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/blake-hildebrand-1">Blake Hildebrand</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/dave-woods">Dave Woods</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/drew-hildebrand">Drew Hildebrand</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/galen-spong">Galen Spong</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/geoff-makin">geoff makin</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jason-reskin">Jason Reskin</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jason-steliga">Jason Steliga</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kyle-kotzman">Kyle Kotzman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kyle-morgan-4">Kyle Morgan</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/paul-hodson-1">Paul Hodson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/regan-ervin">Regan Ervin</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div>
+<div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-6-265" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 6</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alison-greenlief">Alison Greenlief</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/briana-talasko">Briana Talasko</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/taylor-simpson">Taylor Simpson</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (13)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/caleb-cauthon">Caleb Cauthon</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alex-lord-1">Alex Lord</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/allen-greenlief">Allen Greenlief</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ben-stringer">Ben Stringer</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brandon-schmidt">Brandon Schmidt</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/brian-woodson">Brian Woodson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/chris-culbertson-1">Chris Culbertson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/derek-newman">Derek Newman</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/karthik-ramachandran">Karthik Ramachandran</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/nicholas-semrau">Nicholas Semrau</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/shane-martin">Shane Martin</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/stephen-harrington">Stephen Harrington</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/taylor-boyd">Taylor Boyd</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div></div>
+      <div class="row-fluid"><div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-7-141" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 7</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (3)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/chelsea-dalbey">Chelsea Dalbey</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/katie-laird">katie laird</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/steph-rupp">Steph Rupp</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (14)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/timothy-robbins">Timothy Robbins</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/adam-wise">Adam Wise</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/alex-proffer">Alex Proffer</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/anthony-chartier">Anthony Chartier</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ben-reynolds-1">Ben Reynolds</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/danny-ross">Danny Ross</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/eli-kahn">Eli Kahn</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/geoffrey-white">GEOFFREY WHITE</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jacob-flekier">Jacob  Flekier</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jeff-healy">Jeff Healy</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/john-scheeser">John Scheeser</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/lee-clark">Lee Clark</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ryan-noll">Ryan Noll</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ryan-tuschhoff-1">Ryan Tuschhoff</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div>
+<div class="span4 media-item-wrapper spacer1 ">
+    <a class="media-item-tile media-item-tile-normal media-item-tile-cover" href="http://kcusl.com/t/team-8-124" style="background-image: url(&#39;https://cdn.usetopscore.com/uploads/152/media_items/uc-logomark-1.280.280.s.png&#39;)">
+    <div class="media-item-tile-overlay">
+      <div>
+                              </div>
+      <h3>Team 8</h3>
+                </div>
+  </a>
+      <ul class="slot rostered-player-list" style="margin-top: 15px">
+            <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Women (4)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ashley-frerking">Ashley Frerking</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/holly-simpson">Holly Simpson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kristiana-preus">Kristiana Preus</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/nicole-hale">Nicole Hale</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+                <li class="gender-cluster">
+                  <ul class="spacer-half">
+            <li class="small"><h5>Men (13)</h5></li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/shawn-dubbs">Shawn Dubbs</a>                <span class="small">captain</span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/barrett-davis">Barrett Davis</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ben-goehrung-1">Ben Goehrung</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/creighton-miller">Creighton Miller</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/david-schleicher">david schleicher</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jeremiah-thomas">Jeremiah Thomas</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/jimmy-reeves">Jimmy Reeves</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/kevin-pollmiller">Kevin Pollmiller</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/matthew-carlson">Matthew Carlson</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/ryan-schroeder">Ryan Schroeder</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/sean-mckeon">Sean McKeon</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/tim-oliphant">Tim Oliphant</a>                <span class="small"></span>
+              </li>
+                                        <li>
+                <a class="plain-link" href="http://kcusl.com/u/vlad-kaufman">Vlad Kaufman</a>                <span class="small"></span>
+              </li>
+                      </ul>
+              </li>
+            </ul>    </div></div>
+  
+<div class="row-fluid media-list-row"></div><div class="row-fluid media-list-row"></div><div class="row-fluid media-list-row"></div><div class="row-fluid media-list-row"></div><div class="row-fluid media-list-row"></div>
+
+ 
+
+    </div>
+  </div>
+    </div>
+  </div>
+  
+
+  <div class="options-menu player-menu" id="unassigned-player-dropdown">
+    <h4 class="single-name hide"></h4>
+    <h4 class="group-name hide"></h4>
+    <div class="form-row">
+      <label for="draft_team_id">Add to</label>
+      <div class="form-control">
+        <select name="draft_team_id" id="draft_team_id" class="draft-team">
+          <option value="">Select a Team</option>
+                      <optgroup label="Mixed">
+                              <option value="147597" data-division="10717">Team 1</option>
+                              <option value="147598" data-division="10717">Team 2</option>
+                              <option value="147599" data-division="10717">Team 3 (Amigos)</option>
+                              <option value="147600" data-division="10717">Team 4</option>
+                              <option value="147601" data-division="10717">Team 5</option>
+                              <option value="147602" data-division="10717">Team 6</option>
+                              <option value="147603" data-division="10717">Team 7</option>
+                              <option value="147604" data-division="10717">Team 8</option>
+                          </optgroup>
+                  </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-control">
+        <a data-url="/t/admin/add-to-team" href="javascript:;" class="draft-player btn"><span class="btn-label">Add</span></a>      </div>
+    </div>
+  </div>
+  <div class="options-menu player-menu" id="assigned-player-dropdown">
+    <h4 class="single-name hide"></h4>
+    <h4 class="group-name hide"></h4>
+    <div class="form-row">
+      <label for="change-role">Role</label>
+      <div class="form-control">
+        <select name="change-role" id="change-role" data-url="/u/edit/change-role">
+                      <option value="captain">Captain</option>
+                      <option value="player">Player</option>
+                      <option value="coach">Coach</option>
+                      <option value="admin">Admin</option>
+                  </select>
+      </div>
+      <label for="draft_team_id">Move to</label>
+      <div class="form-control">
+        <select name="draft_team_id" class="draft-team">
+          <option value="">Teams</option>
+                      <optgroup label="Mixed">
+                              <option value="147597" data-division="10717">Team 1</option>
+                              <option value="147598" data-division="10717">Team 2</option>
+                              <option value="147599" data-division="10717">Team 3 (Amigos)</option>
+                              <option value="147600" data-division="10717">Team 4</option>
+                              <option value="147601" data-division="10717">Team 5</option>
+                              <option value="147602" data-division="10717">Team 6</option>
+                              <option value="147603" data-division="10717">Team 7</option>
+                              <option value="147604" data-division="10717">Team 8</option>
+                          </optgroup>
+                  </select>
+      </div>
+    </div>
+    <div class="form-row hide" id="group-checkbox">
+      <div class="form-control">
+        <input type="checkbox" name="baggage-group-id" id="baggage-group-id"> Edit Group      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-control">
+        <a data-url="/t/admin/add-to-team" href="javascript:;" class="draft-player btn"><span class="btn-label">Move</span></a>        <a data-url="/t/admin/remove-from-team" href="javascript:;" class="undraft-player alt btn"><span class="btn-label">Remove</span></a>      </div>
+    </div>
+  </div>
+</div>
+        </div>
+              </div>
+        <div id="bottom-flex"></div>
+  </div>
+</div>      </div>
+                        <div id="footer">
+  <div class="footer-inner">
+    <ul class="nav nav-plain">
+      <li class="nav-item ">
+      <a href="http://kcusl.com/more-ultimate">Play Ultimate</a>          </li>
+      <li class="nav-item ">
+      <a href="http://kcusl.com/community">Community</a>          </li>
+      <li class="nav-item ">
+      <a href="http://kcusl.com/about">About KCU</a>          </li>
+  </ul>
+    <ul class="nav nav-plain spacer1">
+              <li>
+          <a data-ga="{&quot;category&quot;:&quot;social&quot;,&quot;action&quot;:&quot;click-facebook&quot;,&quot;label&quot;:&quot;footer&quot;}" href="https://www.facebook.com/KCUltimate" class="icon-facebook plain-link"><span class="icon"></span><span class="btn-label">Facebook</span></a>        </li>
+                    <li>
+          <a data-ga="{&quot;category&quot;:&quot;social&quot;,&quot;action&quot;:&quot;click-twitter&quot;,&quot;label&quot;:&quot;footer&quot;}" href="https://www.twitter.com/KCUltimate" class="icon-twitter plain-link"><span class="icon"></span><span class="btn-label">Twitter</span></a>        </li>
+            <li><a href="http://kcusl.com/p?feed=rss" class="icon-rss plain-link"><span class="icon"></span><span class="btn-label">RSS</span></a></li>
+    </ul>
+      <div id="cms-area-102741-footer" class="cms-area ">
+                <div id="cms-slots-102741-footer" class="cms-slots ">
+      <div class="full-html ">
+  <div class="cms-slot cms-slot-raw-html floating-option-menu-scope" id="slot-139140" data-permid="4">
+            <div class=" cms-slot-content" id="cms-slot-content-139140">
+        <div class="rich-text">
+            <!-- Begin MailChimp Signup Form -->
+<link href="./css/sl2015/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="http://kcultimate.us4.list-manage.com/subscribe/post?u=90c10bd3c110a68b20787a8b1&id=ce640d3e30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+	<label for="mce-EMAIL">Subscribe to the KCU Mailing List</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->      </div>      </div>
+      <div class="slot-target hide spacer-half-top text-center">
+        <div class="control-group">
+          <a href="javascript:;" class="btn slot-select"><span class="btn-label">Move Here</span></a>          <a href="javascript:;" class="btn slot-action-cancel icon-cancel alt"><span class="icon"></span><span class="btn-label">Cancel</span></a>        </div>
+      </div>
+    </div></div>    </div>
+      </div>
+    <div class="text-center small-size">
+              Part of <a class="plain-link icon-right icon-uc" href="http://ultimatecentral.com/"><span class="btn-label">Ultimate Central</span><span class="icon"></span></a>            <span style="margin-left: 20px">Powered by <a href="http://www.usetopscore.com/" class="plain-link icon-right icon-ts"><span class="btn-label">TopScore</span><span class="icon"></span></a></span>
+    </div>
+  </div>
+</div>                  </div>
+  </div>
+    
+    
+
+      <div class="scripts">
+                        <script src="./css/sl2015/js"></script><script src="./css/sl2015/main.js"></script>
+                  <script src="./css/sl2015/bbe2035d87b259a6a482e5cc94325a88.js"></script>
+                  <script src="./css/sl2015/d78b6d4fea238af2c909db799e1ee05c.js"></script>
+                            <script>
+$(function() {
+ts.liveFilter2("#team-list-b45e30cc", null, false, "66001a")
+ts.liveFilter("#team-search", "#team-list")
+ts.registerStylesheets(["\/asset-cache\/web-css-reset.css.63df25b82ddc95bda944d68f22fc547f.css","\/asset-cache\/web-css-global-basic.less.eb80639e5d30cee41364ef7031adb83a.fc90da8131bab94b4cbe5705404bd18a.css","\/asset-cache\/web-css-global-grid.less.eb80639e5d30cee41364ef7031adb83a.377a7f3c8a7b535c913d615ec33f00f7.css","\/asset-cache\/web-css-global-typography.less.eb80639e5d30cee41364ef7031adb83a.824d3d653e875a75b2a5e486f54f57e7.css","\/asset-cache\/web-css-component-badges.less.eb80639e5d30cee41364ef7031adb83a.5a0ff9cdf5ef0f29c371705f30c03c11.css","\/asset-cache\/web-css-component-breadcrumb.less.eb80639e5d30cee41364ef7031adb83a.1c5857f955161301bcdb2728f933b7b1.css","\/asset-cache\/web-css-component-buttons.less.eb80639e5d30cee41364ef7031adb83a.1d784737493cad4b7f46a2cbdf4c9ae4.css","\/asset-cache\/web-css-component-icons.less.eb80639e5d30cee41364ef7031adb83a.6188c3d4938031120dd68097b28e5d69.css","\/asset-cache\/web-css-component-hero.less.eb80639e5d30cee41364ef7031adb83a.66270a0bf3ed42029d96eeed3e398bf5.css","\/asset-cache\/web-css-component-media_list.less.eb80639e5d30cee41364ef7031adb83a.8b1faa9f478e54e0e6545942d14be758.css","\/asset-cache\/web-css-component-menu.less.eb80639e5d30cee41364ef7031adb83a.9f2a7f5681077399bf5c5c8dd87deefe.css","\/asset-cache\/web-css-component-navigation.less.eb80639e5d30cee41364ef7031adb83a.a77609052da614ef98c54ba8c83f057d.css","\/asset-cache\/web-css-component-notices.less.eb80639e5d30cee41364ef7031adb83a.4d8de32a4e9366d9bc3a2d5dd3a8cc9c.css","\/asset-cache\/web-css-component-panel.less.eb80639e5d30cee41364ef7031adb83a.c46d7d1d12ea01c0cab919b029e5a202.css","\/asset-cache\/web-css-component-body_background.less.eb80639e5d30cee41364ef7031adb83a.cdbaa904c61ce668239c5832b97f8791.css","\/asset-cache\/web-css-component-progress_bar.less.eb80639e5d30cee41364ef7031adb83a.78b052dae5e2d2a710e26bc5afc7b731.css","\/asset-cache\/web-css-component-filters.less.eb80639e5d30cee41364ef7031adb83a.0320f98092494b11d833ba27496ebd38.css","\/asset-cache\/web-css-component-rostering.less.eb80639e5d30cee41364ef7031adb83a.42a94b8c0f4c4d147a758ff9d1befe19.css","\/asset-cache\/web-css-component-sortable.less.eb80639e5d30cee41364ef7031adb83a.19f6976fd763bdd83d7952c90261605f.css","\/asset-cache\/web-css-component-input_groups.less.eb80639e5d30cee41364ef7031adb83a.e5e305e596c080daba5f3d91ee268431.css","\/asset-cache\/web-css-module-blog.less.eb80639e5d30cee41364ef7031adb83a.ea555eadcd02a72d63eb3fb8056b5ec0.css","\/asset-cache\/web-css-module-cms.less.eb80639e5d30cee41364ef7031adb83a.c9e1bc1869749a0d4146b6f03b1e2a4c.css","\/asset-cache\/web-css-module-product.less.eb80639e5d30cee41364ef7031adb83a.ca8542f0e65ae7e389b26edf6ee03628.css","\/asset-cache\/web-css-module-event.less.eb80639e5d30cee41364ef7031adb83a.b7578e1b7b91299a54540dcb3843ebf3.css","\/asset-cache\/web-css-module-schedule.less.eb80639e5d30cee41364ef7031adb83a.ca1fd50fef5c9568cb35435430da198e.css","\/asset-cache\/web-css-form-forms.less.eb80639e5d30cee41364ef7031adb83a.275a9d7f3cb4509a004df13af067c064.css","\/asset-cache\/web-css-form-survey.less.eb80639e5d30cee41364ef7031adb83a.394b42c20f878dbd40d40a3b769603a9.css","\/asset-cache\/web-css-form-jquery-ui-custom.less.eb80639e5d30cee41364ef7031adb83a.aa5d1118c40c44896d924dc6193ea53a.css","\/asset-cache\/web-css-theme-layout-default.less.eb80639e5d30cee41364ef7031adb83a.c44ba8e531829350a3622e372936f3e9.css","\/asset-cache\/web-css-theme-navigation-default.less.eb80639e5d30cee41364ef7031adb83a.e4f610e4136844521bf72706351dccb1.css","\/asset-cache\/web-css-vendor-intl-tel-input-intlTelInput.css.1e2b309a467d1670d75d91fbc4d7fddc.css","\/asset-cache\/web-css-component-global_toolbar.less.eb80639e5d30cee41364ef7031adb83a.06172f791e3817ee42e78eb3a19f5e8f.css","\/asset-cache\/web-css-component-popup.less.eb80639e5d30cee41364ef7031adb83a.bc26341d6ca4026e665dc7b35e2523d5.css"])
+ts._debug = false
+ts._ajaxErrorUrl = "\/ajax-error"
+ts.registerScripts(["https:\/\/maps.googleapis.com\/maps\/api\/js?sensor=false","\/js\/vendor\/jquery.1.10.2.min.js","\/asset-cache\/web-js-vendor-markerclusterer.js.c186e5a25b2a62a8bdda1af06981d6ad.js","\/js\/vendor\/oms.min.js","\/asset-cache\/web-js-vendor-jquery.ui.1.8.21.js.80faf0fd53494d7a86a326230cdf5beb.js","\/asset-cache\/web-js-ts.js.a6659bdd099e6e67e8a8f099f06b4b2d.js","\/asset-cache\/web-js-widget-date.js.ab94bb2beb4e8ce4ff6df98627288819.js","\/asset-cache\/web-js-vendor-jquery.hoverIntent.js.5fbdc2b4477646cf1bb20abc97dbac96.js","\/asset-cache\/web-js-vendor-jquery.timePicker.js.c5bffb4ae9d739fc7dd182fbab10af06.js","\/asset-cache\/web-js-vendor-jquery.tmpl.js.d80e078aafa0d0d70e451c60a7643238.js","\/asset-cache\/web-js-widget-autocomplete.js.2e3ea2cbc313bb04d3c9622be88b235c.js","\/asset-cache\/web-js-widget-autosize.js.01e178fb123942078314e9ca561682a4.js","\/asset-cache\/web-js-widget-geo.js.9a5a0eed8e89fa4e789554e050fcaa92.js","\/asset-cache\/web-js-widget-html.js.c2c454888de865461532806b6855427a.js","\/asset-cache\/web-js-widget-select_many.js.34f721bc6707bf9b05b8db68f0092ba5.js","\/asset-cache\/web-js-widget-slider.js.d4a3721c7ec28e73d5cc1939d2b88ab6.js","\/asset-cache\/web-js-widget-person_photo.js.1a67f4347386de4b0ae4040006023145.js","\/asset-cache\/web-js-widget-media_item.js.fb4b309c30196d8a5e9905d89d119224.js","\/asset-cache\/web-js-widget-phone_numbers.js.af63d23dbb8528212ceda7cae1637c78.js","\/asset-cache\/web-js-vendor-intl-tel-input-intlTelInput.js.c610b6988eac0eafba073994094ee57a.js","\/js\/vendor\/mailcheck.min.js","\/asset-cache\/web-js-widget-email.js.2c6ed420b75d9146581d80a57e3834e0.js","\/asset-cache\/web-js-widget-quantity.js.972e4bfcc02237846b0540ed0651616a.js","\/asset-cache\/web-js-site.js.26dc8a412556e5bf2fbd5f9eacab00bf.js","\/asset-cache\/web-js-component-popup.js.79b97fb4b5d82b44ca50754a86f50caf.js","\/asset-cache\/web-js-component-flashes.js.10683428cdb0568c47e4df049798ea4d.js","\/asset-cache\/web-js-component-filter2.js.fcb4c32e0bbccfbbb92e33fb8f9cc37a.js","\/asset-cache\/web-js-component-email_preview.js.6f7f0fd94592370fa778f4466c65b238.js","\/asset-cache\/web-js-component-stick_on_scroll.js.df46247d5dad92a1c3a779c664a5c345.js","\/asset-cache\/web-js-form-form.js.d6428bca00bbe4d588b372bee0a53e41.js","\/asset-cache\/web-js-form-auth.js.dced74790e059d8c5c9d87a41987b812.js","\/asset-cache\/web-js-form-sales_slide_slot.js.b2a83431e0873855587c0bd10d51b3fa.js","\/asset-cache\/web-js-form-sponsor_slot.js.b965a19eaa1b216dc96fbc10c853047b.js","\/asset-cache\/web-js-form-survey_slot.js.7d956f206535bce8d48359d9c4080e27.js","\/asset-cache\/web-js-form-person_spotlight_slot.js.f14d278aa5297ee61cb824c263882fe8.js","\/asset-cache\/web-js-form-blog_slot.js.e9d07e823c950b2306b75152a0f5f209.js","\/asset-cache\/web-js-form-hero.js.66b03c5d03a1aa7c9d5b51e4626adc66.js","\/asset-cache\/web-js-form-location.js.ce768012aa88190bdc0d7dec72c0b7c8.js","\/asset-cache\/web-js-form-page.js.89d1f47043fb0bc428a4146ab4acfd8a.js","\/asset-cache\/web-js-form-product.js.b4f34b8613f906b25696d0cb62294937.js","\/asset-cache\/web-js-form-survey.js.9765ed704789f70a0c8fcdd0b7670e5f.js","\/asset-cache\/web-js-form-transaction_filter.js.91a2f94087c87d30d708176813cdc1d7.js","\/asset-cache\/web-js-form-transaction_form.js.62a90f13f09e2b58002bcba8faa35edb.js","\/asset-cache\/web-js-form-transaction_request_payment.js.a6e0d1dbecc30773d3e6a888bf577fef.js","\/asset-cache\/web-js-form-waiver.js.27003721d179e1fc7cd348800e434eed.js","\/asset-cache\/web-js-cms-cms.js.ee72f722ba61c9b5766767a390314e04.js","\/asset-cache\/web-js-cms-video.js.d7df232aa0b9a4ba1f5d02f2fafee37c.js","\/asset-cache\/web-js-cms-product_list.js.194e72bcd194c61cabd04829c8a0088f.js","\/asset-cache\/web-js-cms-slideshow.js.b3dca27a9e5cdcb8d069dc4f4ddf753f.js","\/asset-cache\/web-js-component-event.js.9f363b67f073a0f989a75e60e09838ff.js","\/asset-cache\/web-js-component-media.js.18d6902c44c8bff088a54b63a3b53a7a.js","\/asset-cache\/web-js-component-product.js.7b6756603933ce59ba1a21fffd185814.js","\/asset-cache\/web-js-production.js.adf5a2fbdf36ba8781a8387458113732.js","\/asset-cache\/web-js-component-preview_controls.js.2bf4c36c6f3949f8e784ab081c31fdbb.js","\/asset-cache\/web-js-component-disqus.js.cde09e9ff106d34641bea3aa3a3c7af8.js"])
+});
+</script>
+    </div>
+  
+
+  
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ts.enableGoogleAnalytics({"id":"UA-25501925-1"}, {"id":"UA-1712221-63","displayFeatures":0});
+</script>  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"18c7efa99d","applicationID":"2987215","transactionName":"MVRWMkZRV0sFVxZcDAgedxNHRFZVS1EUUA0SHkADVV1K","queueTime":0,"applicationTime":764,"atts":"HRNVRA5LREU=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-476.min.js"}</script>
+<span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span><script src="./css/sl2015/nr-476.min.js"></script><script type="text/javascript" src="./css/sl2015/18c7efa99d"></script></body></html>

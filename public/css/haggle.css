@@ -1,0 +1,60 @@
+body { font-family: "Courier", sans-serif; -ms-user-select: none; }
+table { padding: 1em; border: 1px solid #EAEAEA; }
+table td, table th { padding: .25em; }
+form { margin: 1em; padding: 1em; border: 1px solid #EAEAEA; width: auto; float: left; }
+.labels input { width: 6em; }
+tr.best td { background-color: #DDFFDD; font-weight: normal; }
+.item-row .delete { background-image: url('images/editing-delete-icon.png'); background-size: 18px; background-repeat: no-repeat; background-position: center center; }
+.item-row * { white-space: nowrap; }
+.hidden { visibility: hidden; }
+#name { display : none; }
+.item-buttons { display: none; }
+.item-buttons button { background: white; white-space: nowrap; overflow: hidden; height: 29px; text-align: center; border: 1px solid black; margin: 3px 5px; }
+.item-buttons span { background-color: white; background-repeat: no-repeat; background-size: 15px; background-position: 2px center; padding-left: 20px; margin-right: 2px; }
+.item-buttons button.selected { font-weight: normal; background: green; color: white; }
+#showcase .icon { display: block; float: left; height: 50px; width: 50px; background-color: white; background-repeat: no-repeat; background-size: 90%; background-position: 2px center; padding-left: 20px; margin-right: 2px; }
+#showcase .name { display: block; float: left; font-size: 50px; vertical-align: middle; }
+#showcase .icon.apple,
+.item-buttons span.apple { background-image: url("images/apple.png"); background-color: #FF8080; }
+#showcase .icon.carrots,
+.item-buttons span.carrots { background-image: url("images/carrots.png"); background-color: #FF8741; }
+#showcase .icon.asparagus,
+.item-buttons span.asparagus { background-image: url("images/asparagus.png"); background-color: #2CFF2C; }
+#showcase .icon.avocado,
+.item-buttons span.avocado { background-image: url("images/avocado.png"); }
+#showcase .icon.bananas,
+.item-buttons span.bananas { background-image: url("images/bananas.png"); background-color: #FFFA1A; }
+#showcase .icon.lemons,
+.item-buttons span.lemons { background-image: url("images/lemon.png"); background-color: #FFFA1A; }
+#showcase .icon.mushrooms,
+.item-buttons span.mushrooms { background-image: url("images/mushroom.png"); background-color: #FFC780; }
+#showcase .icon.mustard,
+.item-buttons span.mustard-greens { background-image: url("images/greens.png"); background-color: #2CFF2C; }
+#showcase .icon.pears,
+.item-buttons span.pears { background-image: url("images/pear.png"); background-color: #FFE437; }
+#showcase .icon.red,
+.item-buttons span.red-onions { background-image: url("images/onion.png"); background-color: #FF6BDE; }
+#showcase .icon.onions,
+.item-buttons span.onions { background-image: url("images/onion.png"); }
+#showcase .icon.ginger,
+.item-buttons span.ginger { background-image: url("images/ginger.png"); }
+#showcase .icon.garlic,
+.item-buttons span.garlic { background-image: url("images/garlic.png"); background-color: #FF6BDE; }
+#showcase .icon.eggplant,
+.item-buttons span.eggplant { background-image: url("images/eggplant.png"); }
+#showcase .icon.jalepeno,
+.item-buttons span.jalepeno { background-image: url("images/jalepeno.png"); background-color: #2CFF2C; }
+#showcase .icon.strawberries,
+.item-buttons span.strawberries { background-image: url("images/strawberry.png"); background-color: #FF8080; }
+#dollars-big { font-size: 1.25em; text-align: center; }
+#dollars-big .dollar-sign { color: green; }
+#weight-big { font-size: 1.25em; text-align: center; }
+#count-big { font-size: 1.25em; text-align: center; }
+.add-button-cell { text-align: center; }
+#add { display: block; margin: 0 auto; padding: .5em; }
+
+#item-list .name { cursor: pointer; }
+.clear button { white-space: nowrap; }
+
+h3 { white-space: nowrap; }
+

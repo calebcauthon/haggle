@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link href="css/metro-bootstrap.css" rel="stylesheet" />
+    <link href="css/metro-bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet" />
+    <link href="css/jquery.ui.labeledslider.css" rel="stylesheet" />
+    <link href="css/haggle.css" rel="stylesheet" />
+    <script src="https://cdn.firebase.com/js/client/2.2.0/firebase.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.labeledslider.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/ruby.min.js"></script>
+    <script src="js/haggle.js"></script>
+  </head>
+
+  <body>
+    <div style="margin: 1em; width: 50%;">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Shopping List</h3></th>
+          </tr>
+          <tr>
+            <th>&nbsp;</th>
+            <th>item</th>
+            <th>label</th>
+            <th>price (lb)</th>
+            <th>price (each)</th>
+          </tr>
+        </thead>
+
+        <tbody id="item-list">
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+    <button id="new-shopping-item" style="float: left; clear: both;" type="button">add</button><br /><br />
+    <form>
+      <div class="item-buttons"></div>
+      <br />
+      <input id="name" Placeholder="e.g., broccoli, potatoes" /><br />
+      <br />
+      
+      <table id="costs">
+        <tr id="item-info">
+          <td colspan="4" id="showcase">
+            <span class="icon"></span>
+            <span class="name"></span>
+          </td>
+        </tr>
+        <tr class="labels">
+          <td colspan="2">
+            <div id="dollars-big"><span class="dollar-sign">$</span>0.00</div>
+            <div style="display: none;">
+              <input type="text" value="0" class="first" id="price-first" placeholder="count or $" />
+              <input type="text" value="dollars" id="label-first" placeholder="count or $" /> </td>
+            </div>
+          <td>
+          <td colspan="2">
+            <div id="weight-big">0 lb</div>
+            <div style="display: none;">
+              <input type="text" value="0" class="second" id="price-second" placeholder="$ or count" />
+              <input type="text" value="pounds" id="label-second" placeholder="$ or count" /></td>
+            </div>
+          <td>
+        </tr>
+        <tr class="increments">
+          <td colspan="2">
+            <div id="slider-first" style="width: 10em;"></div>
+          </td>
+          <td></td>
+          <td colspan="2">
+            <div id="slider-second" style="width: 10em;"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td id="add-button-cell" rowspan="2"colspan="2">            
+            <button type="button" id="add">ADD</button>
+          </td>
+          <td colspan="2">
+            <div id="count-big">0</div>
+          </td>
+        </tr>
+        <tr>
+          
+          <td colspan="2">
+            <div id="slider-count" style="width: 10em;"></div>
+          </td>
+        </tr>
+
+
+        <tr class="hidden weight">
+          <td colspan="4"><label>Weight:</label><input type="text" value="" id="weight"/></td>          
+        </tr>
+        <tr class="hidden count">
+          <td colspan="4"><label>Count:</label><input type="text" value="" id="count"/></td>
+        </tr>
+      </table>
+      
+    </form>
+  </body>
+</html>
