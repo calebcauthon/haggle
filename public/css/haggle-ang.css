@@ -9,5 +9,9 @@
 
 #product-in-focus { width: 90%; margin: 0 auto; }
 #product-in-focus #cost { margin-right: 10px; background: #00AD34; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
-#product-in-focus #weight-each { background: #960038; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
-#product-in-focus #product-name { text-align: center; }
+#product-in-focus #weight-each { margin-right: 10px; background: #960038; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
+#product-in-focus #price { margin-right: 10px; background: #CCA800; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
+#product-in-focus #each { background: #1500BC; padding: 5px; color: #FFF; border-radius: 4px; display: block; float: left; }
+#product-in-focus #product-name { font-size: 28px; font-weight: bold; text-transform: uppercase; text-align: center; }
+
+.slider .what-to-do-label { display: block; margin: 0 auto; text-align: center; font-size: 30px; font-weight: bold; }

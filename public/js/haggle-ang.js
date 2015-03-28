@@ -207,18 +207,45 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     $scope.$apply();      
   };
 
-  function current_weight_each_label() {
-    return;
+  function current_weight_label() {
+    if($scope.new_offer && $scope.new_offer.weight) 
+      return accounting.formatNumber($scope.new_offer.weight, 2) + " lbs";
+    else
+      return accounting.formatNumber(0, 2) + " lbs";
   }
 
   function current_cost() {
     if($scope.new_offer)
-      return accounting.formatMoney($scope.new_offer.cost);
+      return accounting.formatMoney($scope.new_offer.cost)
     else
       return accounting.formatMoney(0);
   }
 
-  $scope.current_weight_each_label = current_weight_each_label;
+  function current_price_label() {
+    if($scope.new_offer)  {
+      if($scope.new_offer.cost && $scope.new_offer.weight)
+        return accounting.formatMoney($scope.new_offer.cost / $scope.new_offer.weight) + " / lb";      
+      else 
+        return "--";
+    }
+    else
+      return "--";
+  }
+
+  function current_each_label() {
+    if($scope.new_offer)  {
+      if($scope.new_offer.cost && $scope.new_offer.each)
+        return accounting.formatMoney($scope.new_offer.cost / $scope.new_offer.each) + " each";      
+      else 
+        return "--";
+    }
+    else
+      return "--";
+  }
+
+  $scope.current_each_label = current_each_label;
+  $scope.current_price_label = current_price_label;
+  $scope.current_weight_label = current_weight_label;
   $scope.current_cost = current_cost;
   $scope.show_new_product = show_new_product;
   $scope.show_shopping_list = show_shopping_list;

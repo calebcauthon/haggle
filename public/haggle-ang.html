@@ -64,7 +64,9 @@
             <tr>
               <td colspan="3" style="font-size: 18px; font-weight: bold; text-align: center;">
                 <span id="cost">{{current_cost()}}</span>
-                <span id="weight-each">{{current_weight_each_label()}}</span>
+                <span id="weight-each">{{current_weight_label()}}</span>
+                <span id="price">{{current_price_label()}}</span>
+                <span id="each">{{current_each_label()}}</span>
                 <span id="product-name">{{product_in_focus.name}}</span>
               </td>
             </tr>
@@ -84,19 +86,15 @@
         </table>
 
         <form>
-          <label>Cost <span id="cost-display">{{new_offer.cost}}</span></label>
-          <div id="slider-cost"></div>
+          <div class="slider" id="slider-cost"><span class="what-to-do-label">HOW MUCH DOES IT COST?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.cost" id="dollars" />
           </div>
-          <label>Weight <span id="weight-display">{{new_offer.weight}}</span></label>
-          <div id="slider-weight"></div>
+          <div class="slider" id="slider-weight"><span class="what-to-do-label">HOW MUCH DOES IT WEIGH?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.weight" id="weight" placeholder="Weight in lbs (1.5, e.g.)" />
           </div>
-
-          <label>Each <span id="weight-display">{{new_offer.each}}</span></label>
-          <div id="slider-each"></div>
+          <div class="slider" id="slider-each"><span class="what-to-do-label">HOW MANY IS IT?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.each" id="each" placeholder="Weight in lbs (1.5, e.g.)" />
           </div>
