@@ -218,7 +218,7 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
   function current_each_label() {
     if($scope.new_offer)  {
       if($scope.new_offer.cost && $scope.new_offer.each)
-        return accounting.formatMoney($scope.new_offer.cost / $scope.new_offer.each) + " each";      
+        return $scope.new_offer.each + " count";      
       else 
         return "--";
     }
@@ -230,23 +230,10 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     return offers.forA(product_name).get();
   }
 
-  function serialize() {
-    return angular.toJson({
-      products: products,
-      purchased: purchased
-    });
-  }
-
-  function deserialize(json) {
-    var data = JSON.parse(json);
-    products = data.products;
-    purchased = data.purchased; 
-  }
-
   function save() {
     firebase.save({
       products: products,
-      purchases: purchases,
+      purchased: JSON.parse(angular.toJson(purchased)),
       offers: JSON.parse(angular.toJson(offers.get()))
     })
   }
@@ -254,7 +241,7 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
   function load() {
     return firebase.get().done(function(data) {
       products = (data && data.products) || [];
-      purchases = (data && data.purchases) || [];
+      purchased = (data && data.purchased) || [];
       offers = Offers((data && data.offers) || []);
     });
   }

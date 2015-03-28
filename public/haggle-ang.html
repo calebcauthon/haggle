@@ -60,14 +60,15 @@
         <table class="table">
           <tbody>
             <tr>
-              <td colspan="3" style="font-size: 18px; font-weight: bold; text-align: center;">
+              <td style="font-size: 18px; font-weight: bold; text-align: center;">
                 <span id="cost">{{current_cost()}}</span>
                 <span id="weight-each">{{current_weight_label()}}</span>
                 <span id="price">{{current_price_label()}}</span>
-                <span id="each">{{current_each_label()}}</span>
-                <span id="product-name">{{product_in_focus.name}}</span>
+                <span id="each">{{current_each_label()}}</span>                
               </td>
             </tr>
+            <tr>
+              <td><span id="product-name">{{product_in_focus.name}}</span></td>
           </tbody>
         </table>
         <table class="table">
@@ -76,23 +77,23 @@
               <td><button ng-mousedown="remove_offer(offer)">remove</button></td>
               <td>{{offer.description}}</td>
               <td>
-                <button ng-if="is_redeemed(offer)"  ng-mousedown="unbuy(product_in_focus, offer)">un-buy</button>
-                <button ng-if="!is_redeemed(offer)" ng-mousedown="buy(product_in_focus, offer)"  >buy</button>
+                <button ng-if="is_redeemed(offer)"  ng-mousedown="unbuy(product_in_focus, offer); save();">un-buy</button>
+                <button ng-if="!is_redeemed(offer)" ng-mousedown="buy(product_in_focus, offer); save();"  >buy</button>
               </td>
             </tr>
           </tbody>
         </table>
 
         <form>
-          <div class="slider" id="slider-cost"><span class="what-to-do-label">HOW MUCH DOES IT COST?</span></div>
+          <div class="slider" id="slider-cost"><span class="what-to-do-label">COST?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.cost" id="dollars" />
           </div>
-          <div class="slider" id="slider-weight"><span class="what-to-do-label">HOW MUCH DOES IT WEIGH?</span></div>
+          <div class="slider" id="slider-weight"><span class="what-to-do-label">WEIGHT?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.weight" id="weight" placeholder="Weight in lbs (1.5, e.g.)" />
           </div>
-          <div class="slider" id="slider-each"><span class="what-to-do-label">HOW MANY IS IT?</span></div>
+          <div class="slider" id="slider-each"><span class="what-to-do-label">HOW MANY?</span></div>
           <div class="input-control text">
             <input type="hidden" ng-model="new_offer.each" id="each" placeholder="Weight in lbs (1.5, e.g.)" />
           </div>
