@@ -15,3 +15,4 @@
 #product-in-focus #product-name { font-size: 28px; font-weight: bold; text-transform: uppercase; text-align: center; }
 
 .slider .what-to-do-label { display: block; margin: 0 auto; text-align: center; font-size: 30px; font-weight: bold; }
+#map-canvas { width: 500px; height: 500px; }

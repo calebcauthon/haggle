@@ -96,7 +96,9 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
   };
 
   $scope.add_offer = function(offer_form) {
+    
     var this_offer = {
+      when: moment().format('MMMM Do YYYY, h:mm:ss a'),
       name: offer_form.name,
       description: getDescription(offer_form),
       weight: offer_form.weight,
@@ -104,11 +106,18 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
       each: offer_form.each
     };
 
+    var promise = getLocation().then(function(data) {
+      data.map = null;
+      this_offer.where = data
+    });
+
     offers.add(this_offer);
 
     resetSliders();
     $scope.new_offer = {};
     $scope.offers = all_offers();
+
+    return promise;
   };
 
   function all_offers() {
