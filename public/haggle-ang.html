@@ -19,7 +19,11 @@
   <script src="js/jquery.ui.labeledslider.js"></script>
   <script src="js/metro.min.js"></script>
   <script src="js/accounting.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+
   <script src="js/offers.js"></script>
+  <script src="js/firebase.js"></script>
+
 </head>
 <body class="metro">
 
@@ -36,7 +40,7 @@
       <div id="new-product" style="display: none;">
         <table class="table striped">
           <tr>
-            <td><input placeholder="New product.." ng-model="new_product.name" /><button ng-mousedown="add_product(new_product); show_shopping_list();">add</button></td>
+            <td><input placeholder="New product.." ng-model="new_product.name" /><button ng-mousedown="add_product(new_product); save(); show_shopping_list();">add</button></td>
           </tr>
         </table>
       </div>
@@ -93,7 +97,7 @@
             <input type="hidden" ng-model="new_offer.each" id="each" placeholder="Weight in lbs (1.5, e.g.)" />
           </div>
 
-          <button class="btn" ng-mousedown="new_offer.name = product_in_focus.name; add_offer(new_offer); show_shopping_list();">+ Add</button>
+          <button class="btn" ng-mousedown="new_offer.name = product_in_focus.name; add_offer(new_offer); show_shopping_list(); save();">+ Add</button>
         </form> 
       </div>
   </div>

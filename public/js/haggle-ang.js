@@ -39,7 +39,9 @@ function show_product_in_focus() {
   bind_back_button(show_product_in_focus);
 }
 
-$(document).ready(function() {
+var loadFromAngular = $.Deferred();
+
+loadFromAngular.done(function() {
   $('#slider-cost').labeledslider({
     step: .25,
     min: 0, max: 7,
@@ -108,9 +110,6 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     $scope.new_offer = {};
     $scope.offers = all_offers();
   };
-
-  var products = [ 'mushrooms (1lb)', 'jalepeno (2)', 'paneer', 'cilantro', 'ginger', 'garlic', 'onions', 'tomatoes', 'jackfruit', 'cauliflower' ];
-  var purchased = [];
 
   function all_offers() {
     return offers.get();
@@ -231,21 +230,60 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     return offers.forA(product_name).get();
   }
 
-  $scope.current_each_label = current_each_label;
-  $scope.current_price_label = current_price_label;
-  $scope.current_weight_label = current_weight_label;
-  $scope.current_cost = current_cost;
-  $scope.show_new_product = show_new_product;
-  $scope.show_shopping_list = show_shopping_list;
-  $scope.show_product_in_focus = show_product_in_focus;
-  $scope.best_offer_for = best_offer_for;
-  $scope.remove_product = remove_product;
-  $scope.remove_offer = remove_offer;
-  $scope.buy = buy;
-  $scope.unbuy = unbuy;
-  $scope.is_redeemed = is_redeemed;
-  $scope.is_purchased = is_purchased;
-  $scope.offers_for = offers_for;
-  $scope.offers = all_offers();
-  $scope.all_products = all_products();
+  function serialize() {
+    return angular.toJson({
+      products: products,
+      purchased: purchased
+    });
+  }
+
+  function deserialize(json) {
+    var data = JSON.parse(json);
+    products = data.products;
+    purchased = data.purchased; 
+  }
+
+  function save() {
+    firebase.save({
+      products: products,
+      purchases: purchases,
+      offers: JSON.parse(angular.toJson(offers.get()))
+    })
+  }
+
+  function load() {
+    return firebase.get().done(function(data) {
+      products = (data && data.products) || [];
+      purchases = (data && data.purchases) || [];
+      offers = Offers((data && data.offers) || []);
+    });
+  }
+
+  var products;
+  var purchased;
+  
+  load().done(function() {
+    $scope.save = save
+    $scope.load = load
+    $scope.current_each_label = current_each_label;
+    $scope.current_price_label = current_price_label;
+    $scope.current_weight_label = current_weight_label;
+    $scope.current_cost = current_cost;
+    $scope.show_new_product = show_new_product;
+    $scope.show_shopping_list = show_shopping_list;
+    $scope.show_product_in_focus = show_product_in_focus;
+    $scope.best_offer_for = best_offer_for;
+    $scope.remove_product = remove_product;
+    $scope.remove_offer = remove_offer;
+    $scope.buy = buy;
+    $scope.unbuy = unbuy;
+    $scope.is_redeemed = is_redeemed;
+    $scope.is_purchased = is_purchased;
+    $scope.offers_for = offers_for;
+    $scope.offers = all_offers();
+    $scope.all_products = all_products();
+
+    loadFromAngular.resolve();
+    $scope.$apply();
+  });
 });

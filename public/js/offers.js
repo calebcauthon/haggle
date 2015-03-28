@@ -44,13 +44,23 @@ var Offers = function(offers_list) {
     }).value();
   }
 
+  function serialize() {
+    return angular.toJson(offers_list);
+  }
+
+  function deserialize(json) {
+    offers_list = JSON.parse(json);
+  }
+
   return {
     best: best,
     add: add,
     get: get,
     forA: forA,
     remove: remove,
-    weightOf: weightOf
+    weightOf: weightOf,
+    serialize: serialize,
+    deserialize: deserialize
   };
 };
 
