@@ -108,6 +108,7 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     }
 
     function showOnMap(marker_data) {
+      marker_data.icon = "images/icons/square.png";
       map.addMarker(marker_data);
       map.map.setCenter(new google.maps.LatLng(marker_data.lat, marker_data.lng));
     }
