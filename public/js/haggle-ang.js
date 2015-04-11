@@ -21,21 +21,27 @@ function resetSliders() {
   $('#slider-each').labeledslider("value", 0);
 }
 
+function show_map() {
+  $('.page').hide();
+  $('#map-canvas').show();
+  bind_back_button(show_new_product);
+}
+
 function show_new_product() {
-  $('#shopping-list, #product-in-focus').hide();
+  $('.page').hide();
   $('#new-product').show().find('input').focus();
   bind_back_button(show_new_product);
 }
 
 function show_shopping_list() {
-  $('#new-product, #product-in-focus').hide();
+  $('.page').hide();
   $('#shopping-list').show();
   bind_back_button(show_shopping_list);
 }
 
 function show_product_in_focus() {
+  $('.page').hide();
   $('#product-in-focus').show();
-  $('#new-product, #shopping-list').hide();
   bind_back_button(show_product_in_focus);
 }
 
@@ -95,6 +101,29 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     $scope.new_product = {};
   };
 
+  function Markers(data) {
+    function add(marker_data) {
+      data.push(marker_data);
+      showOnMap(marker_data);
+    }
+
+    function showOnMap(marker_data) {
+      map.addMarker(marker_data);
+      map.map.setCenter(new google.maps.LatLng(marker_data.lat, marker_data.lng));
+    }
+
+    function get() {
+      return data;
+    }
+
+    _.chain(data).map(showOnMap);
+
+    return {
+      add: add,
+      get: get
+    };
+  };
+
   $scope.add_offer = function(offer_form) {
     
     var this_offer = {
@@ -109,6 +138,12 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
     var promise = getLocation().then(function(data) {
       data.map = null;
       this_offer.where = data
+
+      markers.add({
+        lat: data.coords.latitude,
+        lng: data.coords.longitude,
+        title: offer_form.name
+      });
     });
 
     offers.add(this_offer);
@@ -241,6 +276,7 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
 
   function save() {
     firebase.save({
+      markers: markers.get(),
       products: products,
       purchased: JSON.parse(angular.toJson(purchased)),
       offers: JSON.parse(angular.toJson(offers.get()))
@@ -249,16 +285,19 @@ haggleApp.controller('ProductListCtrl', function ($scope) {
 
   function load() {
     return firebase.get().done(function(data) {
-      products = (data && data.products) || [];
+      products  = (data && data.products) || [];
       purchased = (data && data.purchased) || [];
-      offers = Offers((data && data.offers) || []);
+      offers    = Offers((data && data.offers) || []);
+      markers   = Markers((data && data.markers) || []);
     });
   }
 
   var products;
   var purchased;
+  var markers;
   
   load().done(function() {
+    $scope.show_map = show_map;
     $scope.save = save
     $scope.load = load
     $scope.current_each_label = current_each_label;

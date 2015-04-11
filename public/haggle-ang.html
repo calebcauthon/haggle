@@ -12,7 +12,11 @@
   <link href="css/jquery-ui.structure.min.css" rel="stylesheet" />
   <link href="css/jquery-ui.theme.min.css" rel="stylesheet" />
   <link href="css/jquery.ui.labeledslider.css" rel="stylesheet" />
+  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>
+
   <script src="js/underscore-min.js"></script>
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
@@ -27,15 +31,6 @@
   <script src="js/firebase.js"></script>
 
   <script type="text/javascript">
-    //The callback function executed when the location is fetched successfully.
-    function onGeoSuccess(location) {
-        //console.log(location);
-    }
-    //The callback function executed when the location could not be fetched.
-    function onGeoError(error) {
-        //console.log(error);
-    }
-
     function getLocation() {
         var promise = $.Deferred();
 
@@ -43,10 +38,21 @@
         
         geolocator.locate(function(result) {
           promise.resolve(result);
-        }, onGeoError, true, html5Options, 'map-canvas');
+        }, function(data) {
+        }, true);
 
         return promise;
     };
+
+    var map; 
+    $(document).ready(function() {
+      map = new GMaps({
+        div: '#map-canvas',
+        lat: -12.043333,
+        lng: -77.028333,
+        zoom: 18
+      });
+    });
 </script>
 </head>
 <body class="metro">
@@ -56,12 +62,13 @@
       <nav class="navigation-bar-content">
         <item class="element" id="back-button" style="width: 5%;"></item>
         <item class="element-divider"></item>
-        <item class="element" id="app-title" ng-mousedown="show_shopping_list()">Grocery List</item>
+        <item class="element" ng-mousedown="show_shopping_list()">Grocery List</item>
+        <item class="element" ng-mousedown="show_map()">Map</item>
         <item class="element" ng-mousedown="show_new_product();">+ Add</item>
       </nav>
     </nav>
     <div class="grid">
-      <div id="new-product" style="display: none;">
+      <div id="new-product" style="display: none;" class="page">
         <table class="table striped">
           <tr>
             <td><input placeholder="New product.." ng-model="new_product.name" /><button ng-mousedown="add_product(new_product); save(); show_shopping_list();">add</button></td>
@@ -69,7 +76,7 @@
         </table>
       </div>
 
-      <div id="shopping-list" class="">
+      <div id="shopping-list" class="page">
         <table class="table striped">
           <tbody>
             <tr ng-repeat="product in all_products" ng-class="{ bought: is_purchased(product.name) }">
@@ -80,7 +87,8 @@
           </tbody>
         </table>
       </div>
-      <div id="product-in-focus" class="row" style="display: none;">
+
+      <div id="product-in-focus" class="row page" style="display: none;">
         <table class="table">
           <tbody>
             <tr>
@@ -125,9 +133,11 @@
           <button class="btn" ng-mousedown="new_offer.name = product_in_focus.name; add_offer(new_offer).then(save); show_shopping_list();">+ Add</button>
         </form> 
       </div>
+
+      <div id="map-canvas" class="page"></div>
   </div>
 
-  <div id="map-canvas"></div>
+  
 </body>
 </html>
 
